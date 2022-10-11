@@ -20,14 +20,14 @@ SASL mechanism can be used by Kafka clients to authenticate against Amazon MSK c
 ## Building from source
 After you've downloaded the code from GitHub, you can build it using Gradle. Use this command:
  
- `gradle clean build`
+ `gradle clean build -x test`
  
 The generated jar files can be found at: `build/libs/`.
 
 An uber jar containing the library and all its relocated dependencies except the kafka client and `slf4j-api` can
  also be built. Use this command: 
 
-`gradle clean shadowJar` 
+`gradle clean shadowJar -x test` 
 
 The generated uber jar file can also be found at: `build/libs/`. At runtime, the uber jar expects to find the kafka
  client library and the `sl4j-api` library on the classpath. 
